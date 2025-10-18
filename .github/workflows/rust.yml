@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: cargo build --verbose
-    - name: Upload a Build Artifact
+      run: cargo build --release
+    - name: Upload a binary file
       uses: actions/upload-artifact@v4.6.2
       with:
-        name: test-pipelight
-        path: output
+        name: pipelight
+        path: target/release
